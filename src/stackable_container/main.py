@@ -137,8 +137,9 @@ def build(param: Param) -> cq.Workplane:
         clearance = t * CLEARANCE_RATIO
         # Stop below the foot of whatever gets stacked on top of this one.
         top = param.height - _nesting_depth(inset, blend, clearance) - clearance
-        # Trimmed by the outer body: the plates span the full footprint so that
-        # they always reach the wall, which is narrower down around the foot.
+        # The plates are made overlong and trimmed by the outer body: how far
+        # they have to run to meet the wall depends on the height, since the
+        # foot is inset from the body.
         result = result.union(_dividers(param, top).intersect(outer))
 
     return result

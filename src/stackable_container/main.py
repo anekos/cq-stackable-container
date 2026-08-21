@@ -2,8 +2,9 @@ from functools import reduce
 from math import acos, cos, sin
 
 import cadquery as cq
+from click_cadquery import BuildParam
 from click_cadquery.git import version_number as ver
-from pydantic import BaseModel, Field
+from pydantic import Field
 
 # Proportions read off the reference model (sample.stl: 120 x 120 x 80, t = 2).
 CORNER_RADIUS_RATIO = 2.0  # vertical corner fillet
@@ -14,7 +15,7 @@ LIP_HEIGHT = 11.0  # bottom face -> middle of the step
 BLEND_STEPS = 8  # sections used to loft one arc of the step
 
 
-class Param(BaseModel):
+class Param(BuildParam):
     width: int = 120
     height: int = 80
     depth: int = 120

@@ -1,14 +1,14 @@
 .PHONY: interactive
 interactive:
-	uv run stackable-container -- interactive
+	uv run app -- interactive
 
 .PHONY: build
 build:
-	axe src/**/*.py -- uv run stackable-container -- build
+	axe src/**/*.py -- uv run app -- build
 
 .PHONY: watch
 watch:
-	axe src/**/*.py -- uv run stackable-container -- build --show
+	axe src/**/*.py -- uv run app -- build --show
 
 .PHONY: setup
 setup:

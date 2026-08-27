@@ -14,7 +14,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project.scripts]
-stackable-container = "stackable_container:main"
+app = "stackable_container:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/stackable_container"]
